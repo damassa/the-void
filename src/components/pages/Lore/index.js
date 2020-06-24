@@ -1,17 +1,18 @@
 import React from "react";
-import Carousel from "re-carousel";
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 import Wrapper from "../../Wrapper/style";
 import { dataLore as TextWrapper } from "../../Text";
-import Arrows from "../../Carousel/arrows";
 import FooterWrapper from "../../Footer";
 import { CarouselWrapper, Images } from "../../Carousel/style";
 
-import image1 from '../../../assets/images/eye-in-the-abyss-bg.jpg';
-import image2 from '../../../assets/images/image1.jpeg';
-import image3 from '../../../assets/images/image2.jpeg';
-import image4 from '../../../assets/images/image3.jpeg';
-import image5 from '../../../assets/images/image4.jpeg';
+import void1 from '../../../assets/images/eye-in-the-abyss-bg.jpg';
+import void2 from '../../../assets/images/image1.jpeg';
+import void3 from '../../../assets/images/image2.jpeg';
+import void4 from '../../../assets/images/image3.jpeg';
+import void5 from '../../../assets/images/image4.jpeg';
 
 const Lore = () => {
   return (
@@ -19,13 +20,21 @@ const Lore = () => {
       <Wrapper>
         <TextWrapper />
         <CarouselWrapper>
-          <Carousel loop widgets={[Arrows]}>
+          <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true}>
             <Images>
-              <img src={image1} alt="The Void" />
-              <img src={image2} alt="The Void" />
-              <img src={image3} alt="The Void" />
-              <img src={image4} alt="The Void" />
-              <img src={image5} alt="The Void" />
+              <img src={void1} alt="The Void" title="The eye of The Void"/>
+            </Images>
+            <Images>
+              <img src={void2} alt="The Void" title="An Unknowable Power"/>
+            </Images>
+            <Images>
+              <img src={void3} alt="The Void" title="The Fall of Icathia"/>
+            </Images>
+            <Images>
+              <img src={void4} alt="The Void" title="The Voidborn"/>
+            </Images>
+            <Images>
+              <img src={void5} alt="The Void" title="The Touch of The Void"/>
             </Images>
           </Carousel>
         </CarouselWrapper>
