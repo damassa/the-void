@@ -35,7 +35,7 @@ const Home = () => {
         </VideoWrapper>
         <TextWrapper />
         { <CarouselWrapper>
-          { <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true}>
+          { <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true} useKeyboardArrows={true}>
             {data.map((data, id) => (
               <Images key={id}>
                 <img alt="Void Champions" src={data.image} title={data.name} />

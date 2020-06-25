@@ -20,7 +20,7 @@ const Lore = () => {
       <Wrapper>
         <TextWrapper />
         <CarouselWrapper>
-          <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true}>
+          <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true} useKeyboardArrows={true}>
             <Images>
               <img src={void1} alt="The Void" title="The eye of The Void"/>
             </Images>
