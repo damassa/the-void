@@ -5,6 +5,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Wrapper from "../../Wrapper/style";
+import { ModalImageChampion } from '../../Modal/ModalStyle';
 import FooterWrapper from "../../Footer/";
 import { dataChampions as TextWrapper } from "../../Text";
 import {
@@ -80,8 +81,12 @@ const Champions = () => {
           >
             <Fade in={open}>
               <div className={classes.paper}>
+                <ModalImageChampion image={active.image} />
                 <h2 id="transition-modal-title">{active.name}</h2>
                 <p id="transition-modal-description">{active.nickname}</p>
+                <p>{active.biography}</p>
+                <p>{active.role}</p>
+                <p>{active.difficulty}</p>
               </div>
             </Fade>
           </Modal>

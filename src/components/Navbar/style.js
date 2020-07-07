@@ -7,28 +7,19 @@ export const NavbarWrapper = styled.div`
     position: fixed;
     display: flex;
     width: 100%;
+    max-width: 100vw;
     height: 70px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    background: rgba(10,10,12,.75);
+    backdrop-filter: blur(3px);
+    box-shadow: ${props => props.Hold ? "var(--boxShadow)" : "none"};
     z-index: 200;
-    background-color: #0a0a0c;
 
     @media only screen and (max-width: 768px) {
         justify-content: space-between;
     }
 ` 
-
-export const Container = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 95%;
-
-    @media only screen and (max-width: 768px) {
-        justify-content: space-between;
-    }
-`
 
 export const Menu = styled.div`
     display: flex;
