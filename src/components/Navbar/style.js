@@ -34,25 +34,13 @@ export const Links = styled(NavLink)`
     font-size: 16pt;
     text-decoration: none;
 
-    
-    &:after {
-        position: absolute;
-        content: " ";
-        width: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-bottom: 1px solid #b09155;
-        pointer-events: none;
-        transition: 0.25s;
+    &.active{
+        font-weight: bold;
     }
 
-    &.active:after {
-        width: 100%;
-    }
-
-    &:hover:after {
-        width: 100%;
+    &:hover {
+        transition: 0.35s;
+        font-weight: bold;
     }
 
 
