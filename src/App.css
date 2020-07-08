@@ -16,7 +16,6 @@ html, body, #root {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #0a0a0c;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -42,6 +41,7 @@ html, body, #root {
 
 body {
   margin: 0;
+  background-color: #0a0a0c;
 }
 
 /**

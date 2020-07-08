@@ -3,23 +3,6 @@ import styled from 'styled-components';
 import LogoImg from '../../assets/void_crest.png';
 import MenuIcon from '../../assets/icons/menu.png';
 
-export const NavbarWrapper = styled.div`
-    position: fixed;
-    display: flex;
-    width: 100%;
-    max-width: 100vw;
-    height: 70px;
-    align-items: center;
-    justify-content: space-evenly;
-    background: rgba(10,10,12,.75);
-    backdrop-filter: blur(3px);
-    box-shadow: ${props => props.Hold ? "var(--boxShadow)" : "none"};
-    z-index: 200;
-
-    @media only screen and (max-width: 768px) {
-        justify-content: space-between;
-    }
-` 
 
 export const Menu = styled.div`
     display: flex;

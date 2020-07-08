@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import windowScrollPosition from '@rehooks/window-scroll-position';
 
-import { 
-    NavbarWrapper, 
-    Menu, 
-    Links, 
-    Logo, 
-    NavMobile 
-} from './style';
+import './style.css';
+import { Menu, Links, Logo, NavMobile } from './style.js';
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
     const [hold, setHold] = useState(false);
-    const position = windowScrollPosition();
+    let position = windowScrollPosition();
 
     const closeOnClick = () => {
         setMenu(false);
@@ -27,7 +22,7 @@ const Navbar = () => {
     }, [position, hold])
 
     return (
-        <NavbarWrapper Hold={hold && !menu}>
+        <div className="NavbarWrapper">
             <Logo to="/"/>
             <NavMobile onClick={() => setMenu(!menu)}/>
             <Menu onClick={closeOnClick} Open={menu}>
@@ -44,7 +39,7 @@ const Navbar = () => {
                     Other Regions
                 </Links>    
             </Menu>
-        </NavbarWrapper>
+        </div>
     )
 }
 
