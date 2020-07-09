@@ -1,6 +1,6 @@
 .NavbarWrapper {
     background-color: #0a0a0c;
-    position: fixed;
+    position: sticky;
     top: 0;
     display: flex;
     width: 100%;

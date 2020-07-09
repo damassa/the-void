@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {makeStyles} from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import Slide from '@material-ui/core/Slide';
 import Wrapper from "../../Wrapper/style";
 import { ModalImageChampion } from '../../Modal/ModalStyle';
 import FooterWrapper from "../../Footer/";
 import { dataChampions as TextWrapper } from "../../Text";
+import '../../Modal/style.css';
 import {
   CWrapper,
   ChampionCard,
@@ -15,22 +15,11 @@ import {
   ChampionName,
 } from "../Champions/style";
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Champions = () => {
-  const classes = useStyles();
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState({});
@@ -67,29 +56,23 @@ const Champions = () => {
               </ChampionName>
             </ChampionCard>
           ))}
-          <Modal
-              aria-labelledby="transition-modal-title"
-              aria-describedby="transition-modal-description"
-              className={classes.modal}
-              open={open}
-              onClose={handleClose}
-              closeAfterTransition
-              BackdropComponent={Backdrop}
-              BackdropProps={{
-                timeout: 500,
-              }}
+          <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-slide-title"
+            aria-describedby="alert-dialog-slide-description"
           >
-            <Fade in={open}>
-              <div className={classes.paper}>
-                <ModalImageChampion image={active.image} />
-                <h2 id="transition-modal-title">{active.name}</h2>
-                <p id="transition-modal-description">{active.nickname}</p>
-                <p>{active.biography}</p>
-                <p>{active.role}</p>
-                <p>{active.difficulty}</p>
-              </div>
-            </Fade>
-          </Modal>
+            <DialogContent>
+              <ModalImageChampion image={active.image}/>
+              <h1 style={{color: '#fff'}}>{active.name}</h1>
+              <h2 style={{color: '#fff'}}>{active.nickname}</h2>
+              <h3 style={{color: '#fff'}}>{active.difficulty}</h3>
+              <h4 style={{color: '#fff'}}>{active.role}</h4>
+              <p style={{color: '#fff'}}>{active.biography}</p>
+            </DialogContent>
+          </Dialog>
         </CWrapper>
       </Wrapper>
       <FooterWrapper />

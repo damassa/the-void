@@ -1,0 +1,32 @@
+.MuiDialogContent-root::-webkit-scrollbar {
+    width: 10px;
+}
+
+.MuiDialogContent-root::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #f7e9cd; 
+    border-radius: 10px;
+}
+   
+  /* Handle */
+.MuiDialogContent-root::-webkit-scrollbar-thumb {
+    background: #b09155; 
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+.MuiDialogContent-root::-webkit-scrollbar-thumb:hover {
+    background: #3f3219;
+    transition: 0.5s ease;
+}
+
+.MuiDialogContent-root {
+    overflow-x: hidden !important;
+    border: 1px #b09155 solid;
+    background-color: #0a0a0c;
+    scrollbar-color: #b09155;
+    scrollbar-width: thin;
+}
+
+.MuiDialog-paperWidthSm {
+    max-width: 900px !important;
+}
