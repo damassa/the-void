@@ -36,6 +36,10 @@ export const ChampionCardImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `
 export const ChampionName = styled.section`
   width: 90%;
