@@ -4,7 +4,7 @@ export const CWrapper = styled.div`
   display: flex;
   width: 80%;
   flex-flow: row wrap;
-  justify-content: space-aound;
+  justify-content: space-around;
 `
 export const ChampionCard = styled.div`
   height: 500px;
@@ -14,6 +14,10 @@ export const ChampionCard = styled.div`
   max-width: 100%;
   margin-bottom: 10vh;  
   overflow: hidden;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 
   &:hover section {
     margin-top: -80px;
