@@ -5,6 +5,10 @@ export const CWrapper = styled.div`
   width: 80%;
   flex-flow: row wrap;
   justify-content: space-around;
+
+  @media only screen and (max-width: 1000px) {
+    align-items: center;
+  }
 `
 export const ChampionCard = styled.div`
   height: 500px;
@@ -15,7 +19,7 @@ export const ChampionCard = styled.div`
   margin-bottom: 10vh;  
   overflow: hidden;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
   }
 

@@ -10,7 +10,7 @@ export const Menu = styled.div`
     justify-content: space-around;
     width: 50%;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1000px) {
         position: fixed;
         flex-flow: column;
         align-items: center;
@@ -44,7 +44,7 @@ export const Links = styled(NavLink)`
     }
 
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
         margin: 10px 0;
         font-size: 24px;
         &.active {
@@ -64,7 +64,7 @@ export const Logo = styled(Link)`
     background-repeat: no-repeat;
     background-position: center;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1000px) {
         margin-left: 20px;
     }
 `
@@ -75,7 +75,7 @@ export const NavMobile = styled.div`
     height: 50px;
     margin-right: 10px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
         display: flex;
         background-image: url(${MenuIcon});
         background-size: 40%;
