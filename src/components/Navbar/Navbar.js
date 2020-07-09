@@ -23,22 +23,26 @@ const Navbar = () => {
 
     return (
         <div className="NavbarWrapper">
-            <Logo to="/"/>
-            <NavMobile onClick={() => setMenu(!menu)}/>
-            <Menu onClick={closeOnClick} Open={menu}>
-                <Links activeClassName="active" exact={true} to="/">
-                    Home
-                </Links>
-                <Links activeClassName="active" to="/champions">
-                    Champions
-                </Links>
-                <Links activeClassName="active" to="/lore">
-                    Lore
-                </Links>
-                <Links activeClassName="active" to="/other_regions">
-                    Other Regions
-                </Links>    
-            </Menu>
+            <div className="NavbarContent">
+                <div className="LogoWrapper">
+                    <Logo to="/"/>
+                </div>
+                <NavMobile onClick={() => setMenu(!menu)}/>
+                <Menu onClick={closeOnClick} Open={menu}>
+                    <Links activeClassName="active" exact={true} to="/">
+                        Home
+                    </Links>
+                    <Links activeClassName="active" to="/champions">
+                        Champions
+                    </Links>
+                    <Links activeClassName="active" to="/lore">
+                        Lore
+                    </Links>
+                    <Links activeClassName="active" to="/other_regions">
+                        Other Regions
+                    </Links>    
+                </Menu>
+            </div>
         </div>
     )
 }
