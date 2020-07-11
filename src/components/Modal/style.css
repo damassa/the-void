@@ -15,8 +15,8 @@
   
   /* Handle on hover */
 .MuiDialogContent-root::-webkit-scrollbar-thumb:hover {
-    background: #3f3219;
-    transition: 0.5s ease;
+    background: #a5a097;
+    transition: 0.5s;
 }
 
 .MuiDialogContent-root {
@@ -29,4 +29,83 @@
 
 .MuiDialog-paperWidthSm {
     max-width: 900px !important;
+}
+
+.ModalChampion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.ModalChampionInfo {
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.ModalChampionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 40px;
+}
+
+.ModalChampionTitleDetail {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 5em;
+    text-align: center;
+    color: #b09155;
+}
+
+.ModalChampionNickname {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    font-size: 14px;
+}
+
+.ModalChampionInfoContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.ModalChampionDifficulty {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ModalChampionRole {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ModalChampionInfoDetail {
+    color: #b09155;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.ModalChampionDifficultyDetail, .ModalChampionRoleDetail {
+    color: #fff;
+    position: relative;
+    bottom: 15px;
+    font-size: 14px;
+}
+
+.ModalChampionBiography {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModalChampionBiographyDetail {
+    text-align: justify;
+    color: #fff;
 }

@@ -33,6 +33,7 @@ export const Links = styled(NavLink)`
     color: #b09155;
     font-size: 16pt;
     text-decoration: none;
+    font-family: Open Sans;
 
     &.active{
         font-weight: bold;

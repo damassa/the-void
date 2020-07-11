@@ -50,10 +50,12 @@ export const ChampionName = styled.section`
   align-items: center;
   justify-content: center;
   transition: 0.5s;
-
-  & span {
-    color: #C4B998;
-    text-align: center;
-    font-size: 20px;
-  }
 `
+
+export const ChampionNameDetail = styled.span`
+  color: #C4B998;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+`  
