@@ -3,7 +3,6 @@ const router = express.Router();
 
 const database = require('./database');
 
-
 // ADD CHAMPION
 router.post('/', (request, response) => {
     let name       = request.body.name;
@@ -21,7 +20,7 @@ router.post('/', (request, response) => {
                 response.status(400).json({ error: error }).send();
         });
     } else
-response.status(404).send( 'Validation error.');
+        response.status(404).send( 'Validation error.');
 });
 
 // RETURN ALL CHAMPIONS

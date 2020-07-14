@@ -11,6 +11,7 @@ api.use(bodyParser.json());
 
 require('./controllers/champions')(api);
 require('./controllers/other_regions')(api);
+require('./controllers/skills_champions')(api);
 
 const port = 3333;
 api.listen(port, () => {

@@ -3,7 +3,6 @@ const router = express.Router();
 
 const database = require('./database');
 
-
 // ADD REGION
 router.post('/', (request, response) => {
     let name  = request.body.name;

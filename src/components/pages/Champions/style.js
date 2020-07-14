@@ -50,6 +50,10 @@ export const ChampionName = styled.section`
   align-items: center;
   justify-content: center;
   transition: 0.5s;
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 export const ChampionNameDetail = styled.span`
