@@ -35,7 +35,7 @@ const Champions = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/api/champions", {})
+      .get(`http://localhost:3333/api/skills_champions`, {})
       .then((response) => {
         setData(response.data);
       })
@@ -66,7 +66,7 @@ const Champions = () => {
             aria-describedby="alert-dialog-slide-description"
           >
             <DialogContent>
-              <ModalChampionImage image={active.image}/>
+              <ModalChampionImage image={active.champion_image}/>
               <div className="ModalChampion">
                 <div className="ModalChampionInfo">
                   <p className="ModalChampionNickname">{active.nickname}</p>
@@ -89,6 +89,15 @@ const Champions = () => {
                   </div>
                   <div className="ModalChampionBiography">
                       <p className="ModalChampionBiographyDetail">{active.biography}</p>
+                  </div>
+                  <div className="ModalChampionAbilitiesTitle">
+                    <h1 className="ModalChampionAbilitiesTitleDetail">ABILITIES</h1>
+                  </div>
+                  <div className="ModalChampionAbilities">
+                    <p style={{color: '#fff'}}>
+                      {active.ability}
+                      {active.description}
+                    </p>
                   </div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ const database = require('./database');
 // GET CHAMPIONS WITH SKILLS
 router.get('/', (request, response) => {
 
-    database.connection.query(`SELECT distinct * FROM skills_champions group by name`, (error, result) => {
+    database.connection.query('SELECT * FROM skills_champions', (error, result) => {
         if (!error) {
             response.status(200).json(result);
         }
