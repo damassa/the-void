@@ -23,12 +23,20 @@ router.post('/', (request, response) => {
         response.status(404).send( 'Validation error.');
 });
 
-// RETURN ALL CHAMPIONS
+// RETURN ALL CHAMPIONS WITH SKILLS
 router.get('/', (request, response) => {
-
-    database.connection.query(`select * from champions ORDER BY id`, (error, result) => {
-        if (!error) {
-            response.status(200).json(result);
+    database.connection.query(`select * from champions ORDER BY id`, (error, champions) => {
+        if (!error) {        
+            champions.forEach(( champion, index ) => {
+                database.connection.query(`select * from skills WHERE champion_id = ?`, [champion.id], (error, skills) => {
+                    if (error) {
+                        response.status(400).json({ error: error });
+                        return false;
+                    }
+                    champions[index].skills = skills;
+                })
+            })
+            response.status(200).json(champions);
         }
         else {
             response.status(400).json({ error: error });
