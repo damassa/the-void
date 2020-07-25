@@ -28,15 +28,17 @@ router.get('/', (request, response) => {
     database.connection.query(`select * from champions ORDER BY id`, (error, champions) => {
         if (!error) {        
             champions.forEach(( champion, index ) => {
-                database.connection.query(`select * from skills WHERE champion_id = ?`, [champion.id], (error, skills) => {
+                database.connection.query(`select champion_id, name as ability, description, image as s_image from skills WHERE champion_id = ?`, [champion.id], (error, skills) => {
                     if (error) {
                         response.status(400).json({ error: error });
                         return false;
+                    } else {
+                        champions[index].skills = skills;
                     }
-                    champions[index].skills = skills;
+                    console.log(champions[index]);
                 })
             })
-            response.status(200).json(champions);
+            response.status(200).json(champions.skills);     
         }
         else {
             response.status(400).json({ error: error });
