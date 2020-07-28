@@ -38,7 +38,7 @@ router.get('/', (request, response) => {
                     console.log(champions[index]);
                 })
             })
-            response.status(200).json(champions.skills);     
+            response.status(200).json(champions);     
         }
         else {
             response.status(400).json({ error: error });
