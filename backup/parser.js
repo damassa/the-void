@@ -1,25 +1,39 @@
 const fs = require('fs');
-const regionsTxt = require('./regions.txt');
 
-const cleanData = (data) => data.split("'").filter((regionSplitted, index) => index%2);
-
-const createObject = (name, image) => { 
-  return {"name": name, "image": image};
-};
-
-let objects = [];
-
-fs.readFile('./regions.txt', 'utf8', function (err,data) {
+fs.readFile('./skills.txt', 'utf8', function (err,data) {
     if (err) {
       return console.log(err);
     }
 
-    cleanData(data)
-    .forEach((data, index, arr) => { 
-      if(!((index + 1)%2)) objects.push(createObject(arr[index-1], data));
+    let skills = data.split("(").filter((v, index) => { 
+      if(index>0) return v;
+    });
+    
+    let objects = [];
+
+    skills.forEach(skill => { 
+      let skillObject = { 
+        skillName: '',
+        skillImage: '',
+        skillDescription: '',
+      }
+      
+      skill.split(',').forEach((value, index, arr) => { 
+        if(index !== 0 && index !== arr.length && index !== arr.length - 1 && index !== arr.length - 2) { 
+          if(index === 1) {
+            skillObject.skillName = JSON.stringify(value).replace(/((^")|("$))/g, "").trim();
+          } else if (index === arr.length - 3) {
+            skillObject.skillImage = value;
+          } else { 
+            skillObject.skillDescription += value;
+          }
+        }
+      });
+
+      objects.push(skillObject);
     });
 
-    // TODO
     console.log(objects);
-});
+  }
+);
 
