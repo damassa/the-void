@@ -11,6 +11,7 @@ module.exports = {
 
     async store(req, res){
         const skill =  await Skill.create(req.body);
+        console.log(req.body)
         return res.json(skill)
     },
 

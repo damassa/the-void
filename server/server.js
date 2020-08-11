@@ -13,7 +13,7 @@ api.use(express.json());
 // Starting database
 
 mongoose.connect('mongodb://localhost:27017/the-void', {
-    useNewUrlParser: true
+    useNewUrlParser: true,
 });
 
 mongoose.connection.on('connected', function(){
