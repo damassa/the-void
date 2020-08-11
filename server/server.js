@@ -12,12 +12,12 @@ api.use(express.json());
 
 // Starting database
 
-/*mongoose.connect('mongodb+srv://damassa:91799449@cluster0.euofb.mongodb.net/the-void?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://localhost:27017/the-void', {
     useNewUrlParser: true
-});*/
+});
 
-mongoose.connect('mongodb://localhost:27017/nodeapi', {
-    useNewUrlParser: true
+mongoose.connection.on('connected', function(){
+    console.log('Connected')
 });
 
 requireDir("./src/models");

@@ -11,6 +11,7 @@ module.exports = {
 
     async store(req, res){
         const other_region =  await OtherRegion.create(req.body);
+        console.log(req.body);
         return res.json(other_region)
     },
 
