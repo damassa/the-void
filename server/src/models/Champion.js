@@ -3,7 +3,7 @@ const mongoosePaginate = require('mongoose-paginate');
 
 const ChampionSchema =  new mongoose.Schema({
     
-    name:{
+    name: {
         type: String,
         required: true,
     },
@@ -18,20 +18,39 @@ const ChampionSchema =  new mongoose.Schema({
         required: true,
     },
 
-    biography:{
+    biography: {
         type: String,
         required: true,
     },
 
-    difficulty:{
+    difficulty: {
         type: String,
         required:true,
     },
 
-    image:{ 
+    image: { 
         type: String,
         required: true
-    }
+    },
+    
+    skills: [
+        {
+            ability: {
+                type: String,
+                required: true
+            }, 
+
+            description: {
+                type: String,
+                required: true
+            },
+
+            skill_image: {
+                type: String,
+                required: true
+            }
+        }
+    ]
     
 });
 
