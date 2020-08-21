@@ -22,7 +22,8 @@ module.exports = {
 
     async update(req, res){
         const champion =  await Champion.findByIdAndUpdate(
-            req.params.id , req.body, {new : true});
+            req.params.id , req.body, {new : true}
+        );
         return res.json(champion);
     },
 
