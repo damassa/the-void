@@ -16,9 +16,9 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/api/champions", {})
+      .get("http://localhost:3333/api/champions")
       .then((response) => {
-        setData(response.data);
+        setData(response.data.docs);
       })
       .catch((error) => {
         console.log(error);
