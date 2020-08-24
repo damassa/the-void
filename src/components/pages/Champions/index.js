@@ -97,16 +97,18 @@ const Champions = () => {
                   {active.skills ? active.skills.map(skill => (
                     <div className="ModalChampionAbilities" key={skill._id}>
                       <div className="ModalChampionAbilitiesContainer">
-                        <div className="ModalChampionAbilitiesName">
-                          <h2 className="ModalChampionAbilitiesNameDetail">{skill.ability}</h2>
-                        </div>
-                        <div className="ModalChampionAbilitiesImage">
-                          <img src={skill.skill_image} alt="Skill" title={skill.ability}/>
-                        </div>
-                        <div className="ModalChampionAbilitiesDescription">
-                          <p className="ModalChampionAbilitiesDescriptionDetail">
-                            {skill.description}
-                          </p>
+                        <h2 className="ModalChampionAbilitiesName">
+                          {skill.ability}
+                        </h2>
+                        <div className="ModalChampionAbilitiesContent">
+                          <div className="ModalChampionAbilitiesImage">
+                            <img src={skill.skill_image} alt="Skill" title={skill.ability}/>
+                          </div>
+                          <div className="ModalChampionAbilitiesDescription">
+                            <p className="ModalChampionAbilitiesDescriptionDetail">
+                              {skill.description}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -98,7 +98,7 @@
     font-size: 14px;
 }
 
-.ModalChampionBiography, .ModalChampionAbilities {
+.ModalChampionBiography {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -112,16 +112,30 @@
 
 .ModalChampionAbilitiesTitleDetail {
     color: #b09155;
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
     font-style: italic;
 }
 
-.ModalChampionAbilitiesContainer {
-    width: 80%;
-    min-height: 150px;
+.ModalChampionAbilities {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0d0e;
+
+    width: 100%;
+    min-height: 150px;
+    margin-top: 1.0rem;
+}
+
+.ModalChampionAbilitiesContainer {
+    width: 90%;
+}
+
+.ModalChampionAbilitiesContent {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
 .ModalChampionAbilitiesImage {
@@ -131,22 +145,17 @@
 
 .ModalChampionAbilitiesName {
     display: flex;
-    max-height: 20px;
-}
-
-.ModalChampionAbilitiesNameDetail {
     color: #b09155;
-    font-size: 1.1em;
+    font-size: 1.5rem;
     font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
     font-weight: 100;
     position: relative;
-    bottom: 15px;
-    margin-left: 10px;
+    margin: 5px 0;
 }
 
 .ModalChampionAbilitiesDescription {
     display: flex;
-    max-height: 64px;
+    width: 80%;
 }
 
 .ModalChampionAbilitiesDescriptionDetail {
