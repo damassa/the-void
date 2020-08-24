@@ -1,18 +1,27 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const requireDir = require('require-dir');
+
 
 const api = express();
+
+// Starting server
 api.use(cors());
-api.use(bodyParser.urlencoded({ extended: false }));
-api.use(bodyParser.json());
+api.use(express.json());
 
-// Controllers import
+// Starting database
 
-require('./controllers/champions')(api);
-require('./controllers/other_regions')(api);
+mongoose.connect('mongodb://localhost:27017/the-void', {
+    useNewUrlParser: true,
+});
 
-const port = 3333;
-api.listen(port, () => {
-    console.log(`Api running on port ${port}`);
-})
+mongoose.connection.on('connected', function(){
+    console.log('Connected')
+});
+
+requireDir("./src/models");
+
+api.use('/api', require('./src/routes'));
+
+api.listen(3333);

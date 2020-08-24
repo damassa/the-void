@@ -35,9 +35,10 @@ const Champions = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3333/api/champions`, {})
+      .get(`http://localhost:3333/api/champions`)
       .then((response) => {
-        setData(response.data);
+        setData(response.data.docs);
+        // console.log(response.data.docs)
       })
       .catch((error) => {
         console.log(error);
@@ -49,8 +50,8 @@ const Champions = () => {
       <Wrapper>
         <TextWrapper />
         <CWrapper>
-          {data.map((champions, id) => (
-            <ChampionCard key ={id} onClick={() => {handleOpen(); setActive(champions)}}>
+          {data.map((champions, index) => (
+            <ChampionCard key ={index} onClick={() => {handleOpen(); setActive(champions)}}>
               <ChampionCardImage image={champions.image} />
               <ChampionName>
                 <ChampionNameDetail>{champions.name}</ChampionNameDetail>
@@ -93,19 +94,23 @@ const Champions = () => {
                   <div className="ModalChampionAbilitiesTitle">
                     <h1 className="ModalChampionAbilitiesTitleDetail">ABILITIES</h1>
                   </div>
-                  <div className="ModalChampionAbilities">
-                    <div className="ModalChampionAbilitiesContainer">
-                      <div className="ModalChampionAbilitiesImage">
-                        <img src={active.s_image} alt="Skill" title={active.ability} />
-                      </div>
-                      <div className="ModalChampionAbilitiesName">
-                        <h2 className="ModalChampionAbilitiesNameDetail">{active.ability}</h2>
-                      </div>
-                      <div className="ModalChampionAbilitiesDescription">
-                        <p className="ModalChampionAbilitiesDescriptionDetail">{active.description}</p>
+                  {active.skills ? active.skills.map(skill => (
+                    <div className="ModalChampionAbilities" key={skill._id}>
+                      <div className="ModalChampionAbilitiesContainer">
+                        <div className="ModalChampionAbilitiesName">
+                          <h2 className="ModalChampionAbilitiesNameDetail">{skill.ability}</h2>
+                        </div>
+                        <div className="ModalChampionAbilitiesImage">
+                          <img src={skill.skill_image} alt="Skill" title={skill.ability}/>
+                        </div>
+                        <div className="ModalChampionAbilitiesDescription">
+                          <p className="ModalChampionAbilitiesDescriptionDetail">
+                            {skill.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )): null}  
                 </div>
               </div>
             </DialogContent>
