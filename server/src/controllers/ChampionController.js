@@ -3,8 +3,6 @@ const Champion = mongoose.model('Champion')
 
 module.exports = {
     async index(req, res){
-        
-        // request example : /procuts?page=2 
         const { page = 1 } = req.query;
         const champion = await Champion.paginate({},{page, limit: 10});
         return res.json(champion);
