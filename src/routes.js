@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Navbar               from './components/Navbar';
-import Home                 from './components/pages/Home';
-import Champions            from './components/pages/Champions';
-import Lore                 from './components/pages/Lore';
-import Other                from './components/pages/Other';
+import Home                 from './pages/Home';
+import Champions            from './pages/Champions';
+import Lore                 from './pages/Lore';
+import Other                from './pages/Other';
 
 export default class Routes extends React.Component {
   render() {

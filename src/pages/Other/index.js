@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { dataOther as TextWrapper } from '../../Text';
-import Wrapper from '../../Wrapper/style';
-import FooterWrapper from '../../Footer';
+import { dataOther as TextWrapper } from '../../components/Text';
+import Wrapper from '../../components/Wrapper/style';
+import FooterWrapper from '../../components/Footer';
 import { OWrapper, RegionCard, ImageCard, NameRegion } from './style';
 
 const Other = () => {

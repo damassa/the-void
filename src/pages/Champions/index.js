@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import Slide from '@material-ui/core/Slide';
-import Wrapper from "../../Wrapper/style";
-import { ModalChampionImage } from '../../Modal/ModalStyle';
-import FooterWrapper from "../../Footer/";
-import { dataChampions as TextWrapper } from "../../Text";
-import '../../Modal/style.css';
+
+import Wrapper from "../../components/Wrapper/style";
+import { ModalChampionImage } from '../../components/Modal/ModalStyle';
+import FooterWrapper from "../../components/Footer";
+import { dataChampions as TextWrapper } from "../../components/Text";
+import '../../components/Modal/style.css';
 import {
   CWrapper,
   ChampionCard,

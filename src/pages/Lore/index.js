@@ -3,16 +3,16 @@ import React from "react";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-import Wrapper from "../../Wrapper/style";
-import { dataLore as TextWrapper } from "../../Text";
-import FooterWrapper from "../../Footer";
-import { CarouselWrapper, Images } from "../../Carousel/style";
+import Wrapper from "../../components/Wrapper/style";
+import { dataLore as TextWrapper } from "../../components/Text";
+import FooterWrapper from "../../components/Footer";
+import { CarouselWrapper, Images } from "../../components/Carousel/style";
 
-import void1 from '../../../assets/images/eye-in-the-abyss-bg.jpg';
-import void2 from '../../../assets/images/image1.jpeg';
-import void3 from '../../../assets/images/image2.jpeg';
-import void4 from '../../../assets/images/image3.jpeg';
-import void5 from '../../../assets/images/image4.jpeg';
+import void1 from '../../assets/images/eye-in-the-abyss-bg.jpg';
+import void2 from '../../assets/images/image1.jpeg';
+import void3 from '../../assets/images/image2.jpeg';
+import void4 from '../../assets/images/image3.jpeg';
+import void5 from '../../assets/images/image4.jpeg';
 
 const Lore = () => {
   return (

@@ -4,12 +4,12 @@ import axios from "axios";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-import Video from "../../../assets/void.mp4";
-import Wrapper from "../../Wrapper/style";
-import FooterWrapper from "../../Footer/";
+import Video from "../../assets/void.mp4";
+import Wrapper from "../../components/Wrapper/style";
+import FooterWrapper from "../../components/Footer/";
 import { VideoWrapper, VideoPlay } from "./style";
-import { dataHome as TextWrapper } from "../../Text";
-import { CarouselWrapper, Images } from "../../Carousel/style";
+import { dataHome as TextWrapper } from "../../components/Text";
+import { CarouselWrapper, Images } from "../../components/Carousel/style";
 
 const Home = () => {
   const [data, setData] = useState([]);
